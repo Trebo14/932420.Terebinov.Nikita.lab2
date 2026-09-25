@@ -23,3 +23,24 @@ header {
 h2 {
   color: var(--accent-color);
 }
+
+ol li {
+  position: relative;
+  padding: 8px 30px;
+  margin-bottom: 6px;
+}
+
+ol li::before,
+ol li::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 18px;
+  background: var(--accent-color);
+  border-radius: 50%;
+}
+
+ol li::before { left: 0; }
+ol li::after  { right: 0; }
