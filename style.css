@@ -56,3 +56,62 @@ ol li:hover::after {
   background: var(--text-color);
   animation: shake 0.3s infinite;
 }
+
+input,
+textarea {
+  font-size: 1rem;
+  padding: 8px;
+  border: 1px solid var(--accent-color);
+  border-radius: 4px;
+  background: transparent;
+  color: var(--text-color);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input:focus,
+textarea:focus {
+  outline: 2px solid var(--accent-color);
+}
+
+button {
+  font-size: 1.1rem;
+  padding: 10px 20px;
+  background: var(--accent-color);
+  color: var(--text-color);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+button:hover {
+  background: var(--text-color);
+  color: var(--accent-color);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+a {
+  color: var(--accent-color);
+}
+
+a:visited {
+  color: var(--text-color);
+}
+
+aside {
+  border: 1px solid var(--accent-color);
+  padding: 15px;
+  margin-top: 20px;
+  border-radius: 6px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 30px;
+  border-top: 1px solid var(--accent-color);
+}
