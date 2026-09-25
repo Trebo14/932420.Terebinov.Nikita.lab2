@@ -44,3 +44,15 @@ ol li::after {
 
 ol li::before { left: 0; }
 ol li::after  { right: 0; }
+
+@keyframes shake {
+  0%, 100% { transform: translateY(-50%) translateX(0); }
+  25%      { transform: translateY(-50%) translateX(-2px); }
+  75%      { transform: translateY(-50%) translateX(2px); }
+}
+
+ol li:hover::before,
+ol li:hover::after {
+  background: var(--text-color);
+  animation: shake 0.3s infinite;
+}
