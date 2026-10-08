@@ -1,70 +1,71 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Музыкант и звукорежиссёр о себе</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    ul { list-style-type: square; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Музыкант и звукорежиссёр о себе</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        #skills-list { list-style-type: square; }
+    </style>
 </head>
 <body>
+    <header>
+        <span class="rec-badge">REC</span>
+        <h1>Теребинов Никита</h1>
+        <p>Музыкант и звукорежиссёр</p>
+    </header>
 
-<header>
-  <span class="rec-badge">REC</span>
-  <h1>Теребинов Никита</h1>
-  <p>Музыкант и звукорежиссёр</p>
-</header>
+    <main>
+        <section id="skills">
+            <h2>Навыки:</h2>
+            <ul id="skills-list">
+                <li>Игра на гитаре и укулеле</li>
+                <li>Работа в FL Studio</li>
+                <li>Сведение и мастеринг треков</li>
+                <li>Запись вокала и живых инструментов</li>
+            </ul>
+        </section>
 
-  <main>
+        <section id="projects">
+            <h2>Проекты:</h2>
+            <ol>
+                <li><span class="project-name">Кавер на трек «Personal» группы Palisades - запись и сведение</span></li>
+                <li><span class="project-name">Авторская композиция «Я забираю телефон»</span></li>
+                <li><span class="project-name">Ремикс на музыку из главного меню Geometry Dash</span></li>
+                <li><span class="project-name">Саундтреки к некоторым играм в Steam</span></li>
+            </ol>
+        </section>
 
-  <section>
-    <h2>Навыки:</h2>
-    <ul>
-      <li>Игра на гитаре и укулеле</li>
-      <li>Работа в FL Studio</li>
-      <li>Сведение и мастеринг треков</li>
-      <li>Запись вокала и живых инструментов</li>
-    </ul>
-  </section>
+        <img src="lb1.jpg" alt="Фото любимой метал-группы" width="600" height="349">
 
-  <section>
-    <h2>Проекты:</h2>
-    <ol>
-      <li>Кавер на трек «Personal» группы Palisades - запись и сведение</li>
-      <li>Авторская композиция «Я забираю телефон»</li>
-      <li>Ремикс на музыку из главного меню Geometry Dash</li>
-      <li>Саундтреки к некоторым играм в Steam</li>
-    </ol>
-  </section>
+        <section id="contact">
+            <h2>Заполните форму, чтобы связаться со мной:</h2>
 
-  <img src="lb1.jpg" alt="Фото любимой метал-группы" width="600" height="349">
+            <form action="#" method="post" style="display: flex; flex-direction: column; gap: 12px; max-width: 500px;">
+                <label for="name">Имя:
+                    <input type="text" id="name" name="name" placeholder="ваше имя" required>
+                </label>
+                
+                <label for="email">Email:
+                    <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                </label>
+                
+                <label for="message">Сообщение:
+                    <textarea id="message" name="message" rows="5" placeholder="напишите, что вам нужно..." required></textarea>
+                </label>
+                
+                <button type="submit">отправить</button>
+            </form>
+        </section>
+    </main>
 
-  <h2>Заполните форму, чтобы связаться со мной:</h2>
-  <form action="#" method="post" style="display: flex; flex-direction: column;">
-    <p>
-      <label for="name">Имя:</label>
-      <input type="text" id="name" name="name" placeholder="ваше имя" required>
-    </p>
-    <p>
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" placeholder="you@example.com" required>
-    </p>
-    <p>
-      <label for="message">Сообщение:</label><br>
-      <textarea id="message" name="message" rows="5" placeholder="напишите, что вам нужно..." required></textarea>
-    </p>
-    <button type="submit">отправить</button>
-  </form>
-
-  </main>
-
-  <aside>
-    <h2>Дополнительная информация обо мне:</h2>
-    <p>Любимый инструмент: гитара</p>
-    <p>Любимые жанры: пауэр-метал, блэк-метал, ню-метал, металкор, рок</p>
-  </aside>
+    <aside>
+        <h2>Дополнительная информация обо мне:</h2>
+        <p>Любимый инструмент: гитара</p>
+        <p>Любимые жанры: пауэр-метал, блэк-метал, ню-метал, металкор, рок</p>
+    </aside>
 
   <footer>
     <p>&copy; 2026 Теребинов Никита. Все права защищены.</p>
