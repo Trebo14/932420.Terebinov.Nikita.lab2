@@ -14,22 +14,46 @@ body {
   padding: 0 20px;
 }
 
-header {
+/* static - элемент находится в нормальном потоке документа (поведение по умолчанию).
+   top/left/right/bottom на него не влияют. */
+main {
   position: static;
+}
+
+/* relative - элемент остаётся в потоке, но создаёт контекст позиционирования
+   для абсолютно позиционированных дочерних элементов (например, .rec-badge). */
+header {
+  position: relative;
   text-align: center;
   padding: 20px 0;
+}
+
+/* absolute - элемент вынесен из нормального потока и позиционируется
+   относительно ближайшего relative-родителя (в данном случае header). */
+.rec-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 4px 10px;
+  border: 1px solid var(--accent-color);
+  border-radius: 4px;
+  font-size: 0.8rem;
+  color: var(--accent-color);
 }
 
 h2 {
   color: var(--accent-color);
 }
 
+/* relative - создаёт контекст позиционирования для псевдоэлементов-волн
+   ::before и ::after, чтобы они позиционировались внутри каждого li. */
 ol li {
   position: relative;
-  padding: 8px 30px;
+  padding: 0 30px;
   margin-bottom: 6px;
 }
 
+/* Псевдоэлементы-волны */
 ol li::before,
 ol li::after {
   content: "";
@@ -45,6 +69,7 @@ ol li::after {
 ol li::before { left: 0; }
 ol li::after  { right: 0; }
 
+/* Анимация дрожания */
 @keyframes shake {
   0%, 100% { transform: translateY(-50%) translateX(0); }
   25%      { transform: translateY(-50%) translateX(-2px); }
@@ -57,6 +82,7 @@ ol li:hover::after {
   animation: shake 0.5s infinite;
 }
 
+/* Поля формы */
 input,
 textarea {
   font-size: 1rem;
@@ -69,11 +95,13 @@ textarea {
   box-sizing: border-box;
 }
 
+/* Focus на полях */
 input:focus,
 textarea:focus {
   outline: 2px solid var(--accent-color);
 }
 
+/* Кнопка */
 button {
   font-size: 1.1rem;
   padding: 10px 20px;
@@ -91,9 +119,10 @@ button:hover {
 }
 
 button:active {
-  transform: scale(0.98);
+  transform: scale(0.96);
 }
 
+/* Ссылки */
 a {
   color: var(--accent-color);
 }
@@ -102,6 +131,7 @@ a:visited {
   color: var(--text-color);
 }
 
+/* Боковая панель */
 aside {
   border: 1px solid var(--accent-color);
   padding: 15px;
@@ -109,6 +139,7 @@ aside {
   border-radius: 6px;
 }
 
+/* Подвал */
 footer {
   text-align: center;
   padding: 20px 0;
