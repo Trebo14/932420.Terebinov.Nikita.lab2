@@ -21,6 +21,7 @@
     </header>
 
     <main>
+
         <section id="skills">
             <h2>Навыки:</h2>
             <ul id="skills-list">
@@ -45,10 +46,8 @@
 
         <section id="contact">
             <h2>Заполните форму, чтобы связаться со мной:</h2>
+            <form action="#" method="post" style="display: flex; flex-direction: column; gap: 12px; max-width: 500px;">
 
-            <!-- Способ 3: inline-стиль - display:flex для контейнера формы -->
-            <form action="#" method="post"
-                  style="display: flex; flex-direction: column; gap: 12px; max-width: 500px;">
                 <label for="name">Имя:
                     <input type="text" id="name" name="name" placeholder="ваше имя" required>
                 </label>
@@ -58,13 +57,14 @@
                 </label>
 
                 <label for="message">Сообщение:
-                    <textarea id="message" name="message" rows="5"
-                              placeholder="напишите, что вам нужно..." required></textarea>
+                    <textarea id="message" name="message" rows="5" placeholder="напишите, что вам нужно..." required></textarea>
                 </label>
 
                 <button type="submit">отправить</button>
+
             </form>
         </section>
+
     </main>
 
     <aside>
@@ -73,10 +73,10 @@
         <p>Любимые жанры: пауэр-метал, блэк-метал, ню-метал, металкор, рок</p>
     </aside>
 
-  <footer>
-    <p>&copy; 2026 Теребинов Никита. Все права защищены.</p>
-    <p><a href="https://github.com/Trebo14">Мой GitHub</a></p>
-  </footer>
+    <footer>
+        <p>&copy; 2026 Теребинов Никита. Все права защищены.</p>
+        <p><a href="https://github.com/Trebo14">Мой GitHub</a></p>
+    </footer>
 
 </body>
 </html>
