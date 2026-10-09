@@ -14,27 +14,29 @@ body {
     padding: 0 20px;
 }
 
-/* static - позиционирование по умолчанию, элемент в обычном потоке документа*/
+/* static - значение по умолчанию: элемент в обычном потоке документа */
 main {
-    position: static; 
+    position: static;
 }
 
-/* relative - элемент остаётся в потоке, но становится точкой отсчёта 
-   для вложенных absolute-элементов */
+/* relative - элемент остаётся в потоке, но становится точкой отсчёта
+   для вложенных absolute-элементов (здесь для .rec-badge) */
 header {
     position: relative;
     text-align: center;
     padding: 20px 0;
 }
 
+/* relative - ещё один пример: контекст позиционирования для пунктов
+   списка проектов (при необходимости можно привязать к ним absolute) */
 ol li {
     position: relative;
     padding: 4px 0;
     margin-bottom: 6px;
 }
 
-/* absolute - элемент вырван из потока и привязан к ближайшему 
-   relative/absolute/fixed-родителю */
+/* absolute - элемент вырван из потока и привязан к ближайшему
+   relative-родителю (header). Здесь бейдж REC в правом верхнем углу */
 .rec-badge {
     position: absolute;
     top: 10px;
@@ -54,45 +56,40 @@ a {
     color: var(--accent-color);
     text-decoration: none;
 }
-a:visited {
-    color: var(--text-color);
-}
-a:hover {
-    text-decoration: underline;
-}
+a:visited { color: var(--text-color); }
+a:hover   { text-decoration: underline; }
+
+/* визуальные волны рядом с названиями проектов */
 
 .project-name::before,
 .project-name::after {
     content: "";
     display: inline-block;
-    width: 14px;
-    height: 14px;
-    background: var(--accent-color);
-    border-radius: 0 100% 0 100%; 
-    transform: rotate(45deg);
+    width: 40px;
+    height: 16px;
+    background-color: var(--accent-color);
+
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 20'%3E%3Cpath d='M2 10 Q10 2 20 10 T38 10' fill='none' stroke='white' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E") center / contain no-repeat;
+            mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 20'%3E%3Cpath d='M2 10 Q10 2 20 10 T38 10' fill='none' stroke='white' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E") center / contain no-repeat;
+
     vertical-align: middle;
-    transition: background 0.3s;
+    transition: background-color 0.3s;
 }
 
-.project-name::before {
-    margin-right: 10px;
-}
+.project-name::before { margin-right: 10px; }
+.project-name::after  { margin-left: 10px; }
 
-.project-name::after {
-    margin-left: 10px;
-    border-radius: 100% 0 100% 0;
-}
-
-/* Анимация дрожания */
+/* лёгкое дрожание волн */
 @keyframes shake {
-    0%, 100% { transform: rotate(45deg) translateX(0); }
-    25%      { transform: rotate(45deg) translateX(-2px); }
-    75%      { transform: rotate(45deg) translateX(2px); }
+    0%, 100% { transform: translateX(0); }
+    25%      { transform: translateX(-2px); }
+    75%      { transform: translateX(2px); }
 }
 
+/* :hover - меняем цвет волн и включаем анимацию */
 .project-name:hover::before,
 .project-name:hover::after {
-    background: var(--text-color);
+    background-color: var(--text-color);
     animation: shake 0.4s infinite;
 }
 
@@ -109,14 +106,12 @@ textarea {
     margin-top: 4px;
 }
 
-/* Focus на полях */
 input:focus,
 textarea:focus {
     outline: 2px solid var(--accent-color);
     outline-offset: 1px;
 }
 
-/* Кнопка */
 button {
     font-size: 1.1rem;
     padding: 10px 20px;
@@ -129,15 +124,10 @@ button {
     transition: transform 0.1s, background 0.3s;
 }
 
-button:hover {
-    background: var(--text-color);
-}
+button:hover  { background: var(--text-color); }
+button:active { transform: scale(0.98); }
 
-button:active {
-    transform: scale(0.98);
-}
-
-/* Focus на кнопке */
+/* :focus для кнопки */
 button:focus {
     outline: 2px solid var(--text-color);
     outline-offset: 3px;
